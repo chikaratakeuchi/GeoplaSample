@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  popinfoの初期値設定ファイルになります。このファイル内の項目削除・コピーは行わないでください。
+  初期値の修正を行う場合は 'res/values/popinfo_values.xml' の値を変更してください。
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- お知らせを受信する -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_enabled_default"
+        android:key="popinfo_enabled" />
+
+    <!-- 保存するお知らせの数 -->
+    <EditTextPreference
+        android:defaultValue="@string/popinfo_messages_num_default"
+        android:key="popinfo_messages_num" />
+
+    <!-- お知らせの受信間隔 -->
+    <EditTextPreference
+        android:defaultValue="@string/popinfo_getinfo_interval_default"
+        android:key="popinfo_getinfo_interval" />
+
+    <!-- ポップアップを表示 -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_popup_enabled_default"
+        android:key="popinfo_popup_enabled" />
+
+    <!-- ロック画面に表示 -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_show_on_lockscreen_enabled_default"
+        android:key="popinfo_show_on_lockscreen_enabled" />
+
+    <!-- サウンドを再生 -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_sound_enabled_default"
+        android:key="popinfo_sound_enabled" />
+
+    <!-- バイブレーション -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_vibration_enabled_default"
+        android:key="popinfo_vibration_enabled" />
+
+    <!-- 位置情報を送信する -->
+    <CheckBoxPreference
+        android:defaultValue="@string/popinfo_location_enabled_default"
+        android:key="popinfo_location_enabled" />
+
+    <!-- 位置情報の取得方法 -->
+    <jp.iridge.popinfo.sdk.ui.LocationSourcePreference
+        android:defaultValue="@string/popinfo_location_mode_default"
+        android:entries="@array/popinfo_location_source_entries"
+        android:entryValues="@array/popinfo_location_source_values"
+        android:key="popinfo_location_mode" />
+
+    <!-- 位置情報の送信間隔 -->
+    <EditTextPreference
+        android:defaultValue="@string/popinfo_location_interval_default"
+        android:key="popinfo_location_interval" />
+
+</PreferenceScreen>

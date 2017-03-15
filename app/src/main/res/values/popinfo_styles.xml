@@ -1,0 +1,38 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="PopinfoLockScreen" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:drawable/screen_background_dark</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="PopinfoHeaderArea">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#DDDDDD</item>
+    </style>
+
+    <style name="PopinfoHeaderText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <style name="PopinfoHeaderBackButton">
+        <item name="android:layout_width">54dp</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@drawable/popinfo_icon_back</item>
+    </style>
+
+        <style name="PopinfoHeaderSettingsButton">
+        <item name="android:layout_width">54dp</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@drawable/popinfo_icon_settings</item>
+    </style>
+
+</resources>

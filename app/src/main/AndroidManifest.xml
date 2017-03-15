@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nttdocomo.geoplasample">
+
+    <permission android:protectionLevel="signature"
+        android:name="com.example.nttdocomo.geoplasample.permission.C2D_MESSAGE" />
+
+    <uses-permission android:name="com.example.nttdocomo.getplasample.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.nttdocomo.geoplasample.ui.GeopopListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.nttdocomo.geoplasample.ui.GeopopMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.nttdocomo.geoplasample.ui.GeopopPopupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.example.nttdocomo.geoplasample.ui.GeopopSegment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".GeofencingService"
+            android:enabled="true" />
+        <service
+            android:name="com.geopla.geopop.sdk.service.GeopopIntentService"
+            android:exported="false">
+            <meta-data
+                android:name="GEOPOP_NOTIFICATION_CLASS"
+                android:value="ローカルプッシュ受信クラス" />
+            <meta-data
+                android:name="GEOPOP_SERVICE_CLASS"
+                android:value="Geopopサービスの受信クラス" />
+            <meta-data
+                android:name="GEOPOP_ECA_INTERVAL"
+                android:value="3600" />
+        </service>
+
+        <provider
+            android:name="com.geopla.geopop.sdk.db.GeopopProvider"
+            android:authorities="app_jcKpC4XfVViHgw8o.geopla.db.provider"
+            android:exported="false" />
+        <meta-data
+            android:name="POPINFO_CALLBACK_CLASS"
+            android:value="com.geopla.geopop.callback.GeopopCallback" />
+        <meta-data
+            android:name="POPINFO_APP_ID"
+            android:value="" />
+        <meta-data
+            android:name="POPINFO_SENDER_ID"
+            android:value="project:123456789012" />
+        <meta-data
+            android:name="POPINFO_MAIN_ACTIVITY_CLASS"
+            android:value="auto" />
+        <meta-data
+            android:name="POPINFO_LOCATION_SOURCES"
+            android:value="GPS,Wi-Fi" />
+        <meta-data
+            android:name="POPINFO_POPUP_IS_OPTIONAL"
+            android:value="false" />
+        <meta-data
+            android:name="POPINFO_SHOW_SEGMENT_SETTINGS"
+            android:value="false" />
+        <meta-data
+            android:name="POPINFO_SHOW_ON_LOCKSCREEN"
+            android:value="false" />
+        <meta-data
+            android:name="POPINFO_DEBUG"
+            android:value="false" />
+
+        <meta-data
+            android:name="POPINFO_USES_ANALYTICS"
+            android:value="true" />
+    </application>
+
+</manifest>

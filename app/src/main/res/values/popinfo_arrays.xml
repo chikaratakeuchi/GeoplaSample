@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="popinfo_vibration_pattern">
+        <item>100</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+    </integer-array>
+    <string-array name="popinfo_location_source_entries">
+        <item>Network</item>
+        <item>GPS</item>
+        <item>Wi-Fi</item>
+        <item>Bluetooth</item>
+    </string-array>
+    <string-array name="popinfo_location_source_values">
+        <item>network</item>
+        <item>gps</item>
+        <item>wifi</item>
+        <item>bluetooth</item>
+    </string-array>
+</resources>

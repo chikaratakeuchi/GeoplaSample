@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- お知らせ受信の設定 -->
+    <PreferenceCategory
+        android:key="popinfo_settings"
+        android:title="@string/popinfo_settings_title" >
+        <!-- お知らせを受信する -->
+        <CheckBoxPreference
+            android:key="popinfo_enabled"
+            android:title="@string/popinfo_enabled_title" />
+        <!-- お知らせ受信間隔 ※端末のC2DM/GCMが使用可能な場合は表示されません -->
+        <EditTextPreference
+            android:dependency="popinfo_enabled"
+            android:dialogMessage="@string/popinfo_getinfo_interval_message"
+            android:inputType="number"
+            android:key="popinfo_getinfo_interval"
+            android:maxLength="3"
+            android:title="@string/popinfo_getinfo_interval_title" />
+    </PreferenceCategory>
+
+    <!-- お知らせ受信時の動作 ※ 表示したい項目のコメントアウトを外して使用してください。-->
+    <PreferenceCategory
+        android:key="popinfo_receive"
+        android:title="@string/popinfo_receive_settings_title" >
+        <!-- ポップアップを表示 -->
+        <!-- CheckBoxPreference
+            android:dependency="popinfo_enabled"
+            android:key="popinfo_popup_enabled"
+            android:title="@string/popinfo_popup_enabled_title" / -->
+
+        <!-- ロック画面に表示 -->
+        <!-- ※AndroidManifest.xmlのPOPINFO_SHOW_ON_LOCKSCREENをtrueで組み込んだ場合のみ、自動的に表示されますのでコメントアウトの必要はありません。 -->
+        <CheckBoxPreference
+            android:dependency="popinfo_enabled"
+            android:key="popinfo_show_on_lockscreen_enabled"
+            android:title="@string/popinfo_show_on_lockscreen_enabled_title" />
+
+        <!-- サウンドを再生 -->
+        <!-- CheckBoxPreference
+            android:dependency="popinfo_enabled"
+            android:key="popinfo_sound_enabled"
+            android:title="@string/popinfo_sound_enabled_title" /-->
+
+        <!-- バイブレーション -->
+        <!-- CheckBoxPreference
+            android:dependency="popinfo_enabled"
+            android:key="popinfo_vibration_enabled"
+            android:title="@string/popinfo_vibration_enabled_title" /-->
+
+    </PreferenceCategory>
+
+    <!-- 位置情報関連の設定 (GPS,wifi,iBeaconを使用しない場合は、このカテゴリは自動的に非表示になります。) -->
+    <PreferenceCategory
+        android:key="popinfo_location"
+        android:title="@string/popinfo_location_settings_title" >
+        <!-- 位置情報にもとづくお知らせを受信する -->
+        <CheckBoxPreference
+            android:key="popinfo_location_enabled"
+            android:title="@string/popinfo_location_enabled_title" />
+        <!-- 位置情報精度 -->
+        <jp.iridge.popinfo.sdk.ui.LocationSourcePreference
+            android:dependency="popinfo_location_enabled"
+            android:entries="@array/popinfo_location_source_entries"
+            android:entryValues="@array/popinfo_location_source_values"
+            android:key="popinfo_location_mode"
+            android:title="@string/popinfo_location_mode_title" />
+    </PreferenceCategory>
+
+    <!-- ユーザー情報 -->
+    <PreferenceCategory
+        android:key="popinfo_about"
+        android:title="@string/popinfo_about_title" >
+
+        <!-- ユーザー情報の変更 -->
+        <!-- AndroidManifest.xmlのPOPINFO_SHOW_SEGMENT_SETTINGSをfalseで組み込みとこの項目は自動的に非表示になります。 -->
+        <Preference
+            android:key="popinfo_segment_settings"
+            android:title="@string/popinfo_segment_settings" />
+
+        <!-- ユーザーIDの確認 -->
+        <Preference
+            android:key="popinfo_about_token"
+            android:title="@string/popinfo_about_token_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- popinfo設定の初回起動時の初期値を設定できます。値の修正を行なう場合、アプリプロジェクト本体のres/values以下に同名でコピーしてご利用ください。 -->
+<resources>
+
+<!-- 各種popinfo画面関連のクラス -->
+<!-- ※カスタマイズした各種画面を表示させる場合、作成したクラス名にパッケージ名含めた値に修正してください。 -->
+
+    <!-- お知らせ一覧画面  -->
+    <string name="popinfo_class_list">jp.iridge.popinfo.sdk.PopinfoList</string>
+
+    <!-- お知らせ詳細画面 -->
+    <string name="popinfo_class_messageview">jp.iridge.popinfo.sdk.PopinfoMessageView</string>
+
+    <!-- お知らせポップアップ -->
+    <string name="popinfo_class_popup">jp.iridge.popinfo.sdk.PopinfoPopup</string>
+
+    <!-- ユーザー属性情報画面 -->
+    <string name="popinfo_class_segment">jp.iridge.popinfo.sdk.PopinfoSegment</string>
+
+    <!-- popinfo設定画面 -->
+    <string name="popinfo_class_settings">jp.iridge.popinfo.sdk.PopinfoSettings</string>
+
+
+<!-- popinfo設定画面に関する設定値になります -->
+
+    <!-- お知らせを受信する ※PUSH許諾ダイアログが未完了時の値なので、通常はこのままご使用ください。 -->
+    <string name="popinfo_enabled_default">false</string>
+
+    <!-- お知らせの受信間隔 ※GCM機能が使えない端末でのみ表示されます -->
+    <string name="popinfo_getinfo_interval_default">5</string>
+
+    <!-- ポップアップを表示 -->
+    <string name="popinfo_popup_enabled_default">true</string>
+
+    <!-- サウンドを再生 -->
+    <string name="popinfo_sound_enabled_default">true</string>
+
+    <!-- バイブレーション -->
+    <string name="popinfo_vibration_enabled_default">true</string>
+
+    <!-- ロック画面に表示 -->
+    <string name="popinfo_show_on_lockscreen_enabled_default">true</string>
+
+    <!-- 位置情報を送信する ※位置情報許諾ダイアログが未完了時の値なので、通常はこのままご使用ください。 -->
+    <string name="popinfo_location_enabled_default">false</string>
+
+    <!-- 位置情報の取得方法
+         ※値は | で挟んで指定します。※全て有効の場合のみ挟まず all と指定します。
+         ＜使用例＞
+            all - 全て有効
+            || - 全て無効
+            |gps| - GPSのみ有効
+            |gps|wifi| - GPSとWi-Fiが有効
+            など
+
+        ＜値の種類 ※以下、設定画面で表示しているデフォルトの設定名＞
+            all - 全て有効
+            gps - GPS
+            network - Network
+            wifi - Wi-Fi
+            bluetooth - Bluetooth -->
+    <string name="popinfo_location_mode_default">all</string>
+
+<!-- popinfo設定画面以外の設定値 -->
+
+    <!-- 保存するお知らせの数 （初期値 1000件）
+         ※変更する場合は、"1以上の整数(半角)"で指定してください ※1以上の整数(半角)以外で設定した場合は、popinfoデフォルト値の1000件で動作します。-->
+    <string name="popinfo_messages_num_default">1000</string>
+
+
+    <!-- GPSまたはネットワークを利用する位置情報の取得間隔(分)（初期値 5分）
+         ※変更する場合は、"1～999の整数(半角)"で指定してください ※1～999の範囲外で設定した場合は、popinfoデフォルト値の5分で動作します。-->
+    <string name="popinfo_location_interval_default">5</string>
+
+    <!-- Bluetoothのスキャン間隔(秒)（初期値 10秒）
+         変更する場合は、"5～60の整数(半角)"で指定してください ※5～60の範囲外で設定した場合は、popinfoデフォルト値の10秒で動作します。
+         コード上でPopinfoSettingUtils.setBluetoothScanInterval()を使用して値設定した場合、こちらの値は以後無視されます。 -->
+    <string name="popinfo_bluetooth_scan_interval">10</string>
+
+</resources>

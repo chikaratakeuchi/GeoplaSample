@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- お知らせ一覧の既読／未読時のカラー設定 -->
+    <item name="popinfo_list_row_read" type="color">#F5F5F5</item>
+    <item name="popinfo_list_row_unread" type="color">#FFFFFF</item>
+    <item name="popinfo_list_text_read_title" type="color">@android:color/tertiary_text_dark</item>
+    <item name="popinfo_list_text_unread_title" type="color">@android:color/secondary_text_light</item>
+    <item name="popinfo_list_text_empty" type="color">@android:color/tertiary_text_dark</item>
+
+</resources>

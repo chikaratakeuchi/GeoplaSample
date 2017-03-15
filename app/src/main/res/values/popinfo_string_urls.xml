@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="popinfo_domain_users">users.geopop.geo-pla.com</string>
+    <string name="popinfo_domain_static">static.geopop.geo-pla.com</string>
+    <string name="popinfo_domain_gps">localhost</string>
+    <string name="popinfo_domain_event">events.geopop.geo-pla.com</string>
+</resources>
